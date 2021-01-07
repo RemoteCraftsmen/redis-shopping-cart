@@ -1,0 +1,21 @@
+{
+  "name": "Redis Shopping Cart",
+  "description": "Shopping cart app using Vue, ExpressJS, Redis and RedisJson module",
+  "repository": "https://github.com/RemoteCraftsmen/redis-shopping-cart",
+  "keywords": ["node", "express", "redis", "RedisJson"],
+  "env": {
+    "REDIS_ENDPOINT_URI": {
+      "description": "Redis server URI",
+      "required": true
+    },
+    "REDIS_PASSWORD": {
+      "description": "Redis password",
+      "required": true
+    },
+    "WEB_CONCURRENCY": {
+      "description": "Number of Node processes (on Heroku)",
+      "required": false,
+      "value": "1"
+    }
+  }
+}
