@@ -20,16 +20,19 @@ const {
     REDIS_PASSWORD,
     PORT,
     SESSION_SECRET,
-    APP_FRONTEND_URL
+    APP_FRONTEND_URL,
+    API_URL
 } = process.env;
 
 const app = express();
+
+app.use('/', express.static(path.join(__dirname, '..', '..', 'client', 'dist')));
 
 if (NODE_ENV !== 'production') {
     app.use(
         cors({
             origin(origin, callback) {
-                if (origin === APP_FRONTEND_URL) {
+                if ([APP_FRONTEND_URL, API_URL].includes(origin) || !origin) {
                     callback(null, true);
                 } else {
                     callback(new Error('Not allowed by CORS'));
@@ -65,8 +68,6 @@ app.use(
 );
 
 app.use(bodyParser.json());
-
-app.use('/', express.static(path.join(__dirname, './public')));
 
 const router = require('./routes')(app);
 
