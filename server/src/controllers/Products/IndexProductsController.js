@@ -16,7 +16,7 @@ class IndexProductsController {
             let productList = [];
 
             for (const key of productKeys) {
-                const product = await this.redisClientService.redis.json_get(key);
+                const product = await this.redisClientService.jsonGet(key);
 
                 productList.push(JSON.parse(product));
             }
@@ -30,7 +30,7 @@ class IndexProductsController {
             for (const product of products) {
                 const { id } = product;
 
-                await this.redisClientService.redis.json_set(`product:${id}`, '.', JSON.stringify(product));
+                await this.redisClientService.jsonSet(`product:${id}`, '.', JSON.stringify(product));
             }
 
             for (const key of cartKeys) {

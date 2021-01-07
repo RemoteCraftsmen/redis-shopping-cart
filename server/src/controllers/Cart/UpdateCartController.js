@@ -13,7 +13,7 @@ class UpdateCartController {
         quantity = parseInt(quantity);
         incrementBy = parseInt(incrementBy);
 
-        let productInStore = await this.redisClientService.redis.json_get(`product:${productId}`);
+        let productInStore = await this.redisClientService.jsonGet(`product:${productId}`);
 
         if (!productInStore) {
             return res.status(StatusCodes.BAD_REQUEST).send("Product with this id doesn't exist");
@@ -38,11 +38,7 @@ class UpdateCartController {
 
                 productInStore.stock = newStock;
 
-                await this.redisClientService.redis.json_set(
-                    `product:${productId}`,
-                    '.',
-                    JSON.stringify(productInStore)
-                );
+                await this.redisClientService.jsonSet(`product:${productId}`, '.', JSON.stringify(productInStore));
 
                 return res.sendStatus(StatusCodes.OK);
             }
@@ -64,11 +60,7 @@ class UpdateCartController {
 
                 productInStore.stock -= incrementBy;
 
-                await this.redisClientService.redis.json_set(
-                    `product:${productId}`,
-                    '.',
-                    JSON.stringify(productInStore)
-                );
+                await this.redisClientService.jsonSet(`product:${productId}`, '.', JSON.stringify(productInStore));
 
                 return res.sendStatus(StatusCodes.OK);
             }

@@ -16,7 +16,7 @@ class IndexCartController {
         }
 
         for (const itemKey of Object.keys(cartList)) {
-            const product = await this.redisClientService.redis.json_get(itemKey);
+            const product = await this.redisClientService.jsonGet(itemKey);
 
             productList.push({ product: JSON.parse(product), quantity: cartList[itemKey] });
         }

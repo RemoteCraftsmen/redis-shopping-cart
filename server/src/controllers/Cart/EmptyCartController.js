@@ -13,12 +13,12 @@ class EmptyCartController {
         for (const key of Object.keys(cartList)) {
             await this.redisClientService.redis.hdel(`cart:${cartId}`, key);
 
-            let productInStore = await this.redisClientService.redis.json_get(key);
+            let productInStore = await this.redisClientService.jsonGet(key);
 
             productInStore = JSON.parse(productInStore);
             productInStore.stock += cartList[key];
 
-            await this.redisClientService.redis.json_set(key, '.', JSON.stringify(productInStore));
+            await this.redisClientService.jsonSet(key, '.', JSON.stringify(productInStore));
         }
 
         return res.sendStatus(StatusCodes.NO_CONTENT);

@@ -29,6 +29,14 @@ class RedisClient {
 
         return await recursiveScan();
     }
+
+    jsonGet(key) {
+        return this.redis.json_get(key);
+    }
+
+    jsonSet(key, path, json) {
+        return this.redis.json_set(key, path, json);
+    }
 }
 
 module.exports = RedisClient;

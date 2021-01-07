@@ -3,8 +3,7 @@ module.exports = {
     configureWebpack: {
         resolve: {
             alias: {
-                '@':
-                    '/Users/lukasz/Projects/Other/redis-shopping-cart/client/src'
+                '@': './src'
             }
         }
     },
