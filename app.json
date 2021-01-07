@@ -3,6 +3,11 @@
   "description": "Shopping cart app using Vue, ExpressJS, Redis and RedisJson module",
   "repository": "https://github.com/RemoteCraftsmen/redis-shopping-cart",
   "keywords": ["node", "express", "redis", "RedisJson"],
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ],
   "env": {
     "REDIS_ENDPOINT_URI": {
       "description": "Redis server URI",
