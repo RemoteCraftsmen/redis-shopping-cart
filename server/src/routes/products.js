@@ -1,14 +1,14 @@
 const express = require('express');
 const router = express.Router();
 const checkSession = require('../middleware/checkSession');
-const IndexProductsController = require('../controllers/Products/IndexProductsController');
+const IndexController = require('../controllers/Products/IndexProductsController');
 
 module.exports = app => {
     const redisClientService = app.get('redisClientService');
 
-    const indexProductsController = new IndexProductsController(redisClientService);
+    const indexController = new IndexController(redisClientService);
 
-    router.get('/', [checkSession], (...args) => indexProductsController.index(...args));
+    router.get('/', [checkSession], (...args) => indexController.index(...args));
 
     return router;
 };

@@ -16,7 +16,7 @@ class EmptyCartController {
             let productInStore = await this.redisClientService.jsonGet(key);
 
             productInStore = JSON.parse(productInStore);
-            productInStore.stock += cartList[key];
+            productInStore.stock += parseInt(cartList[key]);
 
             await this.redisClientService.jsonSet(key, '.', JSON.stringify(productInStore));
         }

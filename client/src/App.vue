@@ -18,9 +18,9 @@
 </template>
 
 <script>
-import ProductList from '@/components/ProductList';
-import Cart from '@/components/Cart';
 import { mapGetters, mapActions } from 'vuex';
+import Cart from '@/components/Cart';
+import ProductList from '@/components/ProductList';
 
 export default {
     name: 'App',

@@ -6,8 +6,11 @@ class UpdateCartController {
     }
 
     async index(req, res) {
-        const { cartId } = req.session;
-        const { id: productId } = req.params;
+        const {
+            session: { cartId },
+            params: { id: productId }
+        } = req;
+
         let { quantity, incrementBy } = req.body;
 
         quantity = parseInt(quantity);
@@ -17,10 +20,6 @@ class UpdateCartController {
 
         if (!productInStore) {
             return res.status(StatusCodes.BAD_REQUEST).send("Product with this id doesn't exist");
-        }
-
-        if (quantity === 0) {
-            return res.status.send('Selecting 0 is not possible');
         }
 
         let quantityInCart = (await this.redisClientService.redis.hget(`cart:${cartId}`, `product:${productId}`)) || 0;
@@ -44,11 +43,11 @@ class UpdateCartController {
             }
 
             return res.status(StatusCodes.BAD_REQUEST).send('Not enough products in stock');
-        } else if (quantity < 0) {
+        } else if (quantity <= 0) {
             return res.status(StatusCodes.BAD_REQUEST).send('Quantity should be greater than 0');
         }
 
-        if (incrementBy !== 0) {
+        if (incrementBy) {
             const quantityAfterIncrement = quantityInCart + incrementBy;
 
             if (quantityAfterIncrement <= 0 || stock - incrementBy < 0) {
@@ -66,11 +65,9 @@ class UpdateCartController {
             }
 
             return res.status(StatusCodes.BAD_REQUEST).send('Not enough products in stock');
-        } else if (incrementBy === 0) {
+        } else {
             return res.status(StatusCodes.BAD_REQUEST).send('Value of incrementBy should not be 0');
         }
-
-        return res.status(StatusCodes.BAD_REQUEST).send('Please, provide quantity or incrementBy field');
     }
 }
 

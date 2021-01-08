@@ -1,14 +1,14 @@
 <template>
     <v-row>
-        <v-col v-for="item in items" :key="item.id" cols="12">
-            <cart-item :item="item" @save="save" @delete="remove" />
+        <v-col v-for="(item, index) in items" :key="item.id" cols="12">
+            <cart-item :item="item" @save="save" @delete="remove(index)" />
         </v-col>
     </v-row>
 </template>
 
 <script>
-import CartItem from '@/components/CartItem';
 import { mapActions } from 'vuex';
+import CartItem from '@/components/CartItem';
 
 export default {
     name: 'CartList',
@@ -39,9 +39,9 @@ export default {
             }
         },
 
-        async remove(id) {
+        async remove(index) {
             try {
-                await this.deleteItem(id);
+                await this.deleteItem(this.items[index].id);
             } catch (error) {
                 console.error(error);
             }

@@ -13,7 +13,6 @@ rejson(redis);
 require('dotenv').config();
 
 const {
-    NODE_ENV,
     REDIS_ENDPOINT_URI,
     REDIS_HOST,
     REDIS_PORT,
