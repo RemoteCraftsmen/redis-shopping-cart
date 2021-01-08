@@ -29,7 +29,7 @@
     },
     "PORT": {
       "required": false,
-      "value": 8080
+      "value": "8080"
     },
     "SESSION_SECRET": {
       "required": false,
