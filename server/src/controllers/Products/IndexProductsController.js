@@ -9,7 +9,7 @@ class IndexProductsController {
     async index(req, res) {
         const { resetCode } = req.query;
 
-        const cartKeys = await this.redisClientService.eachScan('product:*');
+        const cartKeys = await this.redisClientService.eachScan('cart:*');
 
         if (!resetCode && cartKeys.length) {
             const productKeys = await this.redisClientService.eachScan('product:*');
@@ -33,9 +33,10 @@ class IndexProductsController {
                 await this.redisClientService.jsonSet(`product:${id}`, '.', JSON.stringify(product));
             }
 
-            for (const key of cartKeys) {
-                await this.redisClientService.redis.hdel(`product:${id}`, key);
-            }
+            // this piece of code is not working => id is undefined
+            // for (const key of cartKeys) {
+            //     await this.redisClientService.redis.hdel(`product:${id}`, key);
+            // }
 
             return res.send(products);
         } else {

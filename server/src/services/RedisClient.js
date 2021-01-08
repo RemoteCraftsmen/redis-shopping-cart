@@ -2,11 +2,10 @@ const { promisify } = require('util');
 
 class RedisClient {
     constructor(redisClient) {
-        this.keyExpiresInMinutes = 0;
-        this.redis = redisClient;
         ['json_get', 'json_set', 'hgetall', 'hset', 'hget', 'hdel', 'hincrby', 'scan'].forEach(
-            method => (this.redis[method] = promisify(this.redis[method]))
+            method => (redisClient[method] = promisify(redisClient[method]))
         );
+        this.redis = redisClient;
     }
 
     async eachScan(pattern) {
@@ -30,12 +29,12 @@ class RedisClient {
         return await recursiveScan();
     }
 
-    jsonGet(key) {
-        return this.redis.json_get(key);
+    async jsonGet(key) {
+        return await this.redis.json_get(key);
     }
 
-    jsonSet(key, path, json) {
-        return this.redis.json_set(key, path, json);
+    async jsonSet(key, path, json) {
+        return await this.redis.json_set(key, path, json);
     }
 }
 
