@@ -29,35 +29,35 @@ class RedisClient {
         return await recursiveScan();
     }
 
-    async jsonGet(key) {
+    jsonGet(key) {
         return this.redis.json_get(key);
     }
 
-    async jsonSet(key, path, json) {
+    jsonSet(key, path, json) {
         return this.redis.json_set(key, path, json);
     }
 
-    async hgetall(key) {
+    hgetall(key) {
         return this.redis.hgetall(key);
     }
 
-    async hset(hash, key, value) {
+    hset(hash, key, value) {
         return this.redis.hset(hash, key, value);
     }
 
-    async hget(hash, key) {
+    hget(hash, key) {
         return this.redis.hget(hash, key);
     }
 
-    async hdel(hash, key) {
+    hdel(hash, key) {
         return this.redis.hdel(hash, key);
     }
 
-    async hincrby(hash, key, incr) {
+    hincrby(hash, key, incr) {
         return this.redis.hincrby(hash, key, incr);
     }
 
-    async del(key) {
+    del(key) {
         return this.redis.del(key);
     }
 }
