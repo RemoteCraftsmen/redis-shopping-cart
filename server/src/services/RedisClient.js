@@ -30,35 +30,35 @@ class RedisClient {
     }
 
     async jsonGet(key) {
-        return await this.redis.json_get(key);
+        return this.redis.json_get(key);
     }
 
     async jsonSet(key, path, json) {
-        return await this.redis.json_set(key, path, json);
+        return this.redis.json_set(key, path, json);
     }
 
     async hgetall(key) {
-        return await this.redis.hgetall(key);
+        return this.redis.hgetall(key);
     }
 
     async hset(hash, key, value) {
-        return await this.redis.hset(hash, key, value);
+        return this.redis.hset(hash, key, value);
     }
 
     async hget(hash, key) {
-        return await this.redis.hget(hash, key);
+        return this.redis.hget(hash, key);
     }
 
     async hdel(hash, key) {
-        return await this.redis.hdel(hash, key);
+        return this.redis.hdel(hash, key);
     }
 
     async hincrby(hash, key, incr) {
-        return await this.redis.hincrby(hash, key, incr);
+        return this.redis.hincrby(hash, key, incr);
     }
 
     async del(key) {
-        return await this.redis.del(key);
+        return this.redis.del(key);
     }
 }
 

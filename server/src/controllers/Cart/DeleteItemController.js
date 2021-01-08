@@ -1,6 +1,6 @@
 const { StatusCodes } = require('http-status-codes');
 
-class DeleteCartItemController {
+class CartDeleteItemController {
     constructor(redisClientService) {
         this.redisClientService = redisClientService;
     }
@@ -27,4 +27,4 @@ class DeleteCartItemController {
     }
 }
 
-module.exports = DeleteCartItemController;
+module.exports = CartDeleteItemController;

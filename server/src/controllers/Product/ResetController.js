@@ -1,7 +1,7 @@
 const { StatusCodes } = require('http-status-codes');
 const { products } = require('../../products.json');
 
-class ResetProductsController {
+class ProductResetController {
     constructor(redisClientService) {
         this.redisClientService = redisClientService;
     }
@@ -23,4 +23,4 @@ class ResetProductsController {
     }
 }
 
-module.exports = ResetProductsController;
+module.exports = ProductResetController;

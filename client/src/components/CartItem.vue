@@ -31,7 +31,7 @@
                     <v-btn
                         class="increment-button ml-2"
                         color="red lighten-2"
-                        @click="deleteItem"
+                        @click="deleteItem(item.id)"
                         ><v-icon>mdi-delete</v-icon></v-btn
                     >
                     <v-spacer />
@@ -76,8 +76,8 @@ export default {
             });
         },
 
-        deleteItem() {
-            this.$emit('delete');
+        deleteItem(id) {
+            this.$emit('delete', id);
         },
 
         incrementItem(value) {

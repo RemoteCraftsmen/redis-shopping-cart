@@ -1,7 +1,7 @@
 <template>
     <v-row>
-        <v-col v-for="(item, index) in items" :key="item.id" cols="12">
-            <cart-item :item="item" @save="save" @delete="remove(index)" />
+        <v-col v-for="item in items" :key="item.id" cols="12">
+            <cart-item :item="item" @save="save" @delete="remove" />
         </v-col>
     </v-row>
 </template>
@@ -39,9 +39,9 @@ export default {
             }
         },
 
-        async remove(index) {
+        async remove(id) {
             try {
-                await this.deleteItem(this.items[index].id);
+                await this.deleteItem(id);
             } catch (error) {
                 console.error(error);
             }

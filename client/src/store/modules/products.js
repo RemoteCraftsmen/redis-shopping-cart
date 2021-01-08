@@ -35,6 +35,13 @@ const actions = {
         commit('setProducts', sorted);
 
         return sorted;
+    },
+
+    async reset({ dispatch }) {
+        await axios.post('/api/products/reset');
+
+        await dispatch('fetch');
+        await dispatch('cart/fetch', null, { root: true });
     }
 };
 

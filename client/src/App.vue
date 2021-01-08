@@ -46,7 +46,7 @@ export default {
     methods: {
         ...mapActions({
             fetchProducts: 'products/fetch',
-            reset: 'reset/reset'
+            reset: 'products/reset'
         }),
 
         async resetData() {

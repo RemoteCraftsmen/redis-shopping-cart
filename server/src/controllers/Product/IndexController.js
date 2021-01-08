@@ -1,6 +1,6 @@
 const { products } = require('../../products.json');
 
-class IndexProductsController {
+class ProductIndexController {
     constructor(redisClientService) {
         this.redisClientService = redisClientService;
     }
@@ -31,4 +31,4 @@ class IndexProductsController {
     }
 }
 
-module.exports = IndexProductsController;
+module.exports = ProductIndexController;

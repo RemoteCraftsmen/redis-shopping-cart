@@ -1,10 +1,10 @@
 const express = require('express');
 const router = express.Router();
 const checkSession = require('../middleware/checkSession');
-const IndexController = require('../controllers/Cart/CartIndexController');
-const UpdateController = require('../controllers/Cart/CartUpdateController');
-const DeleteItemController = require('../controllers/Cart/CartDeleteItemController');
-const EmptyController = require('../controllers/Cart/CartEmptyController');
+const IndexController = require('../controllers/Cart/IndexController');
+const UpdateController = require('../controllers/Cart/UpdateController');
+const DeleteItemController = require('../controllers/Cart/DeleteItemController');
+const EmptyController = require('../controllers/Cart/EmptyController');
 
 module.exports = app => {
     const redisClientService = app.get('redisClientService');
