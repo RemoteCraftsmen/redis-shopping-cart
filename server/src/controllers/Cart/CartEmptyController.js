@@ -8,10 +8,10 @@ class EmptyCartController {
     async index(req, res) {
         const { cartId } = req.session;
 
-        const cartList = await this.redisClientService.redis.hgetall(`cart:${cartId}`);
+        const cartList = await this.redisClientService.hgetall(`cart:${cartId}`);
 
         for (const key of Object.keys(cartList)) {
-            await this.redisClientService.redis.hdel(`cart:${cartId}`, key);
+            await this.redisClientService.hdel(`cart:${cartId}`, key);
 
             let productInStore = await this.redisClientService.jsonGet(key);
 
