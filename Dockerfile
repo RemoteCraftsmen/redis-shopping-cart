@@ -11,5 +11,5 @@ COPY ./server/package.json ./
 RUN npm install
 COPY ./server .
 COPY --from=vue-build /app/dist ./dist
-EXPOSE PORT
+EXPOSE ${PORT}
 CMD ["node", "./src/index.js"]

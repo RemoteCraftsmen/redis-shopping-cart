@@ -19,14 +19,6 @@
       "description": "Redis password",
       "required": true
     },
-    "VUE_APP_API_URL": {
-      "required": false,
-      "value": "http://localhost:8080"
-    },
-    "APP_FRONTEND_URL": {
-      "required": false,
-      "value": "http://localhost:8080"
-    },
     "SESSION_SECRET": {
       "required": false,
       "value": "JY36GtAV6sxLTk86VuarjQAQ"
