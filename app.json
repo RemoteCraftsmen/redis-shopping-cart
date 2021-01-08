@@ -18,10 +18,6 @@
     "REDIS_PASSWORD": {
       "description": "Redis password",
       "required": true
-    },
-    "SESSION_SECRET": {
-      "required": false,
-      "value": "JY36GtAV6sxLTk86VuarjQAQ"
     }
   }
 }
