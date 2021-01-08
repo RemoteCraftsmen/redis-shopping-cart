@@ -27,10 +27,6 @@
       "required": false,
       "value": "http://localhost:8080"
     },
-    "PORT": {
-      "required": false,
-      "value": "8080"
-    },
     "SESSION_SECRET": {
       "required": false,
       "value": "JY36GtAV6sxLTk86VuarjQAQ"
