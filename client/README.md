@@ -5,8 +5,6 @@
 ```
 # Environmental variables
 
-Go into server folder and then:
-
 Copy `.env.example` to `.env`
 
 # Install dependencies

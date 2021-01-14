@@ -11,8 +11,6 @@
 ```
 # Environmental variables
 
-Go into client folder and then:
-
 Copy `.env.example` to `.env` file and fill environmental variables
 
 -   REDIS_PORT: Redis port (default: 6379)
