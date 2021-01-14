@@ -3,12 +3,24 @@
 ## Development
 
 ```
-# copy file and set proper data inside
-cp .env.example .env
+# Environmental variables
 
-# install dependencies
+Copy `.env.example` to `.env` file and fill environmental variables
+
+-   VUE_APP_API_URL: Backend API URL (default: http://localhost:3000)
+
+
+# Run docker compose or install redis with RedisJson module manually
+
+docker network create global
+docker-compose up -d --build
+
+
+# Install dependencies
+
 npm cache clean && npm install
 
-# run development mode
+# Serve locally
+
 npm run serve
 ```
