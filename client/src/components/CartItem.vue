@@ -2,7 +2,10 @@
     <v-container>
         <v-row>
             <v-col class="pa-0" cols="12" sm="4">
-                <v-img :src="require(`../assets/products/${item.id}.jpg`)" />
+                <v-img
+                    class="img"
+                    :src="require(`../assets/products/${item.id}.jpg`)"
+                />
             </v-col>
             <v-col class="pa-0 pl-3" cols="12" sm="8">
                 <small class="font-weight-bold">{{ item.name }}</small>
@@ -30,7 +33,7 @@
                     </div>
                     <v-btn
                         class="increment-button ml-2"
-                        color="red lighten-2"
+                        color="white lighten-2"
                         @click="deleteItem(item.id)"
                         ><v-icon>mdi-delete</v-icon></v-btn
                     >
@@ -89,3 +92,12 @@ export default {
     }
 };
 </script>
+
+<style scoped>
+.img {
+    max-width: 50%;
+    height: auto;
+    margin: auto;
+    filter: brightness(1.35);
+}
+</style>
