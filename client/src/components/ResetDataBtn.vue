@@ -1,5 +1,5 @@
 <template>
-    <v-btn v-if="cartItems.length > 0" class="mx-auto" @click="resetData">
+    <v-btn v-if="cartItems.length" class="mx-auto" @click="resetData">
         Reset data
     </v-btn>
 </template>

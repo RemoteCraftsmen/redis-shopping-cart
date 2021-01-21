@@ -24,7 +24,7 @@
 import { mapGetters, mapActions } from 'vuex';
 import Cart from '@/components/Cart';
 import ProductList from '@/components/ProductList';
-import ResetDataBtn from './components/ResetDataBtn.vue';
+import ResetDataBtn from '@/components/ResetDataBtn.vue';
 
 export default {
     name: 'App',

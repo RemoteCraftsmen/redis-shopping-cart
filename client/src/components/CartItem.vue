@@ -3,8 +3,8 @@
         <v-row>
             <v-col class="pa-0" cols="12" sm="4">
                 <v-img
-                    class="img"
-                    :src="require(`../assets/products/${item.id}.jpg`)"
+                    class="img mw50"
+                    :src="require(`@/assets/products/${item.id}.jpg`)"
                 />
             </v-col>
             <v-col class="pa-0 pl-3" cols="12" sm="8">
@@ -93,11 +93,6 @@ export default {
 };
 </script>
 
-<style scoped>
-.img {
-    max-width: 50%;
-    height: auto;
-    margin: auto;
-    filter: brightness(1.35);
-}
+<style lang="sass" scoped>
+@import '@/styles/images.scss'
 </style>

@@ -2,8 +2,8 @@
     <v-col class="product text-center" cols="12" sm="6" md="4">
         <div class="product-img">
             <v-img
-                class="img"
-                :src="require(`../assets/products/${product.id}.jpg`)"
+                class="img mw75"
+                :src="require(`@/assets/products/${product.id}.jpg`)"
             />
             <div :class="product.stock ? 'product-stock' : 'product-empty'">{{
                 product.stock
@@ -32,11 +32,6 @@ export default {
 };
 </script>
 
-<style scoped>
-.img {
-    max-width: 75%;
-    height: auto;
-    margin: auto;
-    filter: brightness(1.35);
-}
+<style lang="sass" scoped>
+@import '@/styles/images.scss'
 </style>
