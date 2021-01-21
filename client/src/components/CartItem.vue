@@ -12,7 +12,6 @@
                 <div class="d-flex flex-wrap">
                     <v-btn-toggle rounded multiple>
                         <v-btn
-                            class="increment-button2"
                             :disabled="itemQuantity === 1"
                             small
                             @click="incrementItem(-1)"
@@ -27,7 +26,6 @@
                             @input="onItemQuantityChange"
                         />
                         <v-btn
-                            class="increment-button2"
                             :disabled="!item.stock"
                             small
                             @click="incrementItem(1)"
