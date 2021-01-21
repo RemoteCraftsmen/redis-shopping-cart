@@ -58,10 +58,10 @@ html {
     }
 
     input {
-        width: 100px;
         background-color: #fff;
-        border: 1px solid #999;
         text-align: center;
+        pointer-events: auto !important;
+        width: 100px;
     }
 
     fieldset {
