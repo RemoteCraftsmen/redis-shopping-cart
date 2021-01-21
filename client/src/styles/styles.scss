@@ -79,6 +79,11 @@ html {
 
     .v-badge {
         display: block !important;
+
+        .v-badge__wrapper {
+            top: 15px;
+            left: -25px;
+        }
     }
 }
 
