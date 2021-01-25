@@ -11,8 +11,14 @@
                     <product-list :products="products" />
                 </v-col>
                 <v-col cols="12" sm="6" md="4" xl="3">
-                    <!-- <h2 class="mb-4">Shopping cart</h2> -->
                     <cart />
+                </v-col>
+            </v-row>
+            <v-row>
+                <v-col class="pa-0" cols="12" sm="6" md="8" xl="9">
+                    <v-spacer />
+                </v-col>
+                <v-col cols="12" sm="6" md="4" xl="3">
                     <reset-data-btn />
                 </v-col>
             </v-row>
