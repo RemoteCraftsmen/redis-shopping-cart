@@ -1,6 +1,6 @@
 <template>
     <v-app>
-        <v-container class="pb-12" id="main-container">
+        <v-container id="main-container">
             <v-row class="text-center mb-16">
                 <v-col class="pa-0" cols="12">
                     <h1 id="title" class="my-10 mx-auto">Shopping cart demo</h1>
@@ -14,7 +14,7 @@
                     <cart />
                 </v-col>
             </v-row>
-            <v-row>
+            <v-row class="mb-12">
                 <v-col class="pa-0" cols="12" sm="6" md="8" xl="9">
                     <v-spacer />
                 </v-col>
@@ -22,8 +22,11 @@
                     <reset-data-btn />
                 </v-col>
             </v-row>
+
+            <v-footer id="footer" class="mt-12 pa-0">
+                {{ new Date().getFullYear() }} ⓒ
+            </v-footer>
         </v-container>
-        <v-footer class="pt-12"> {{ new Date().getFullYear() }} ⓒ </v-footer>
     </v-app>
 </template>
 
