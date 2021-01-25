@@ -1,13 +1,13 @@
 <template>
     <v-container>
         <v-row>
-            <v-col class="pa-0" cols="12" sm="4">
+            <v-col class="pa-0" cols="12" sm="3">
                 <v-img
-                    class="img mw50"
+                    class="img mw75"
                     :src="require(`@/assets/products/${item.id}.jpg`)"
                 />
             </v-col>
-            <v-col class="pa-0 pl-3" cols="12" sm="8">
+            <v-col class="pa-0 pl-3" cols="12" sm="9">
                 <small class="font-weight-bold">{{ item.name }}</small>
                 <div class="d-flex flex-wrap">
                     <v-btn-toggle rounded>

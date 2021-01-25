@@ -7,10 +7,10 @@
                 </v-col>
             </v-row>
             <v-row>
-                <v-col class="pa-0" cols="12" sm="6" md="7" xl="8">
+                <v-col class="pa-0" cols="12" sm="6" md="8" xl="9">
                     <product-list :products="products" />
                 </v-col>
-                <v-col cols="12" sm="6" md="5" xl="4">
+                <v-col cols="12" sm="6" md="4" xl="3">
                     <h2 class="mb-4">Shopping cart</h2>
                     <cart />
                     <reset-data-btn />

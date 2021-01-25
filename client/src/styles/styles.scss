@@ -27,7 +27,7 @@ html {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     color: #2c3e50;
-    background-color: #eef3f4;
+    background-color: #f8f8fb;
 }
 
 #main-container {
@@ -78,22 +78,27 @@ html {
     flex-basis: 100%;
 }
 
-.product-img {
-    position: relative;
+.product-content {
+    .product-img {
+        position: relative;
 
-    .v-badge {
-        display: block !important;
+        .v-badge {
+            display: block !important;
 
-        .v-badge__wrapper {
-            top: 15px;
-            left: -25px;
+            .v-badge__wrapper {
+                top: 15px;
+                left: -25px;
+            }
         }
     }
+    border-radius: 20px 20px 20px 20px;
+    background: white;
+    padding: 10px;
+    box-shadow: 0 0.5px 1px 0 rgba(0, 0, 0, 0.2),
+        0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;
+    min-height: 370px;
 }
 
 .product {
-    background-color: white;
-    border-color: #eef3f4;
-    border-width: 22px;
-    border-style: none solid solid none;
+    padding: 8px;
 }
