@@ -11,7 +11,7 @@
                     <product-list :products="products" />
                 </v-col>
                 <v-col cols="12" sm="6" md="4" xl="3">
-                    <h2 class="mb-4">Shopping cart</h2>
+                    <!-- <h2 class="mb-4">Shopping cart</h2> -->
                     <cart />
                     <reset-data-btn />
                 </v-col>

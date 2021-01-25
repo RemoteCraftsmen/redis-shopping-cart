@@ -41,6 +41,7 @@ html {
     border-radius: 20px;
     box-shadow: 0 10px 16px 0 rgba(0, 0, 0, 0.2),
         0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;
+    min-height: 110vh;
 }
 
 .increment-button {
@@ -101,4 +102,18 @@ html {
 
 .product {
     padding: 8px;
+}
+
+.center {
+    margin: auto !important;
+
+    h2,
+    p,
+    i {
+        text-align: center !important;
+        width: 100%;
+    }
+    i {
+        padding-bottom: 0.5rem;
+    }
 }
