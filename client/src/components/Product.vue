@@ -7,7 +7,7 @@
                     :color="product.stock ? 'green' : 'red'"
                 >
                     <v-img
-                        class="img mw60"
+                        class="img mw75"
                         :src="require(`@/assets/products/${product.id}.jpg`)"
                     />
                 </v-badge>
@@ -16,7 +16,10 @@
             <p class="font-weight-bold">{{ product.name }}</p>
             <div v-if="product.stock" class="body-2">
                 <p>${{ product.price }}</p>
-                <v-btn class="body-2" @click="$emit('add', product.id)"
+                <v-btn
+                    class="body-2"
+                    style="width: 100%"
+                    @click="$emit('add', product.id)"
                     >Add to cart</v-btn
                 >
             </div>

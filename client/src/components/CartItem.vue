@@ -3,7 +3,7 @@
         <v-row>
             <v-col class="pa-0" cols="3">
                 <v-img
-                    class="img mw75"
+                    class="img mw50"
                     :src="require(`@/assets/products/${item.id}.jpg`)"
                 />
             </v-col>
@@ -33,13 +33,13 @@
                         >
                     </v-btn-toggle>
                     <v-btn
-                        class="increment-button ml-2"
+                        class="increment-button ml-1 mr-1"
                         color="white lighten-2"
                         @click="deleteItem(item.id)"
                         ><v-icon>mdi-delete</v-icon></v-btn
                     >
                     <v-spacer />
-                    <p class="ml-auto">${{ item.priceSum }}</p>
+                    <p class="ml-auto caption">${{ item.priceSum }}</p>
                 </div>
             </v-col>
         </v-row>
