@@ -97,30 +97,6 @@ html {
     padding: 10px;
     box-shadow: 0 0.5px 1px 0 rgba(0, 0, 0, 0.2),
         0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;
-
-    @media screen and (min-width: 600px) {
-        min-height: 250px;
-    }
-
-    @media screen and (min-width: 695px) {
-        min-height: 275px;
-    }
-
-    @media screen and (min-width: 740px) {
-        min-height: 300px;
-    }
-
-    @media screen and (min-width: 935px) {
-        min-height: 320px;
-    }
-
-    @media screen and (min-width: 1090px) {
-        min-height: 365px;
-    }
-
-    @media screen and (min-width: 1250px) {
-        min-height: 390px;
-    }
 }
 
 .product {
