@@ -14,11 +14,12 @@
             </div>
 
             <p class="font-weight-bold">{{ product.name }}</p>
-            <div v-if="product.stock" class="body-2">
+            <div class="body-2">
                 <p>${{ product.price }}</p>
                 <v-btn
                     class="body-2"
                     style="width: 100%"
+                    :disabled="product.stock === 0"
                     @click="$emit('add', product.id)"
                     >Add to cart</v-btn
                 >
