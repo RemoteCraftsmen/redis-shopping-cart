@@ -11,11 +11,11 @@
 
         <v-container>
             <v-row>
-                <v-col cols="12" sm="8">
+                <v-col cols="12" sm="7" md="8">
                     <info />
                     <product-list :products="products" />
                 </v-col>
-                <v-col cols="12" sm="4" class="d-flex flex-column">
+                <v-col cols="12" sm="5" md="4" class="d-flex flex-column">
                     <cart />
                     <reset-data-btn class="mt-6" />
                 </v-col>

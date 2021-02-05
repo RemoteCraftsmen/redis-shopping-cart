@@ -1,6 +1,6 @@
 <template>
     <v-col cols="6" sm="6" md="6" lg="4">
-        <v-card class="h-full">
+        <v-card class="h-full" :disabled="product.stock === 0">
             <div class="d-flex justify-center">
                 <v-img
                         max-width="65%"

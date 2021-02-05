@@ -5,11 +5,12 @@
             color="info"
             class="mb-6"
             border="left"
-            @click="alert = !alert"
+
     >
         <v-row
                 align="center"
                 no-gutters
+                @click="alert = !alert"
         >
             <v-col class="grow">
                 <h3 class="headline">

@@ -1,5 +1,5 @@
 <template>
-        <v-card class="secondary rounded-lg px-2 pr-lg-2 pl-lg-0 mb-2">
+        <v-card class="secondary rounded-lg px-2 pr-lg-2 pl-lg-0 mb-2" >
             <v-row>
                 <v-col cols="4" lg="3" md="0" class="py-0 d-lg-flex d-sm-none d-md-none pl-0 pl-sm-3 pl-md-3 pl-lg-3">
                     <v-img
