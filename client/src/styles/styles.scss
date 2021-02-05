@@ -1,119 +1,60 @@
-html {
-    font-size: 18px;
-
-    @media screen and (min-width: 960px) {
-        font-size: 22px;
-    }
-}
-
-#title {
-    font-size: 240%;
-
-    @media screen and (min-width: 960px) {
-        font-size: 260%;
-    }
-
-    @media screen and (min-width: 1800px) {
-        font-size: 320%;
-    }
-}
-
-#app {
+#main-container {
+    min-width: 100vw;
+    margin: 0 auto;
     background-image: url('../assets/RedisLabs_Illustration.svg');
     background-repeat: no-repeat;
-    background-size: 22% auto;
-    background-position: 104% -70px;
-    font-family: Avenir, Helvetica, Arial, sans-serif;
+    background-size: 50% auto;
+    background-position: 116% -15%;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     color: #2c3e50;
     background-color: #f8f8fb;
-}
 
-#main-container {
-    max-width: 1600px;
-    margin: 0 auto;
-}
-
-#shopping-cart {
-    background-color: #ffffff;
-    margin-bottom: 1.5em;
-    border-radius: 20px;
-    box-shadow: 0 10px 16px 0 rgba(0, 0, 0, 0.2),
-        0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;
-    height: 100%;
-}
-
-.increment-button {
-    width: 30px !important;
-    height: 30px !important;
-    min-width: 0 !important;
-}
-
-.quantity-input {
-    & * {
-        margin: 0 !important;
-        padding: 0 !important;
-    }
-
-    & .v-text-field__slot {
-        display: flex !important;
-        justify-content: center !important;
-        align-items: stretch !important;
-    }
-
-    input {
-        background-color: #fff;
-        text-align: center;
-        pointer-events: auto !important;
-        width: 25px;
-    }
-
-    fieldset {
-        display: none !important;
+    @media screen and (min-width: 2000px) {
+        background-position: 116% -19%;
     }
 }
 
-.full-width {
-    width: 100% !important;
-    flex-basis: 100%;
+.text {
+    word-break: normal;
 }
 
-.product-content {
-    .product-img {
-        position: relative;
-
-        .v-badge {
-            display: block !important;
-
-            .v-badge__wrapper {
-                top: 15px;
-                left: -25px;
-            }
-        }
-    }
-    border-radius: 20px 20px 20px 20px;
-    background: white;
-    padding: 10px;
-    box-shadow: 0 0.5px 1px 0 rgba(0, 0, 0, 0.2),
-        0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;
+input {
+    text-align: center;
+    margin: 0 !important;
 }
 
-.product {
-    padding: 8px;
+.v-input__slot {
+    margin: 0 !important;
 }
 
-.center {
-    margin: auto !important;
+.v-input__slot::before {
+    border-style: none !important;
+    content: none;
+}
 
-    h2,
-    p,
-    i {
-        text-align: center !important;
-        width: 100%;
-    }
-    i {
-        padding-top: 1.5rem;
-        padding-bottom: 1rem;
+.v-input__slot::before:active {
+    border-style: none !important;
+    content: none;
+}
+
+.app-icon {
+    width: 65px;
+    height: 65px;
+    color: white !important;
+    background: linear-gradient(180deg, #fe2d2d 0%, #9b2e4c 100%);
+    border-radius: 10px;
+    margin-right: 10px;
+}
+
+.app-info {
+    background: #e5f3fe !important;
+    border-radius: 4px;
+    border-width: 3px;
+    border-color: #2196f3;
+    border-style: none none none solid;
+
+    * {
+        color: #2196f3;
     }
 }

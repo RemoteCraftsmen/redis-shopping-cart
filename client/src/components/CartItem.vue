@@ -1,46 +1,61 @@
 <template>
     <v-container>
-        <v-row>
+        <v-row class="secondary rounded">
             <v-col class="pa-0" cols="3">
                 <v-img
-                    class="img mw50"
+                    class="rounded"
+                    style="height: 100%"
                     :src="require(`@/assets/products/${item.id}.jpg`)"
                 />
             </v-col>
-            <v-col class="pa-0 pl-3" cols="9">
-                <small class="font-weight-bold">{{ item.name }}</small>
-                <div class="d-flex flex-wrap">
-                    <v-btn-toggle rounded>
-                        <v-btn
-                            :disabled="itemQuantity === 1"
-                            small
-                            @click="incrementItem(-1)"
-                            >-</v-btn
-                        >
-                        <v-text-field
-                            v-model="itemQuantity"
-                            class="quantity-input v-btn v-btn--disabled v-size--small"
-                            style="overflow: hidden"
-                            outlined
-                            dense
-                            @input="onItemQuantityChange"
-                        />
-                        <v-btn
-                            :disabled="!item.stock"
-                            small
-                            @click="incrementItem(1)"
-                            >+</v-btn
-                        >
-                    </v-btn-toggle>
-                    <v-btn
-                        class="increment-button ml-1 mr-1"
-                        color="white lighten-2"
-                        @click="deleteItem(item.id)"
-                        ><v-icon>mdi-delete</v-icon></v-btn
-                    >
-                    <v-spacer />
-                    <p class="ml-auto caption">${{ item.priceSum }}</p>
-                </div>
+
+            <v-col cols="9">
+                <v-card elevation="0" style="width: fit-content !important">
+                    <v-card-title class="secondary pa-0 text-left text">
+                        {{ item.name }}
+                    </v-card-title>
+
+                    <v-card-actions class="secondary pa-0">
+                        <v-row align="center" justify="space-between">
+                            <v-col
+                                cols="3"
+                                md="12"
+                                lg="4"
+                                class="pa-0 pa-3 text-left text"
+                            >
+                                ${{ item.priceSum }}
+                            </v-col>
+
+                            <v-col cols="9" md="12" lg="1" class="pa-0 mt-3">
+                                <v-btn-toggle
+                                    multiple
+                                    rounded
+                                    class="pa-3 secondary"
+                                >
+                                    <v-btn small @click="incrementItem(-1)">
+                                        -
+                                    </v-btn>
+
+                                    <v-btn small>
+                                        <v-text-field
+                                            v-model="itemQuantity"
+                                            style="width: 30px"
+                                            @input="onItemQuantityChange"
+                                        />
+                                    </v-btn>
+
+                                    <v-btn
+                                        :disabled="!item.stock"
+                                        small
+                                        @click="incrementItem(1)"
+                                    >
+                                        +
+                                    </v-btn>
+                                </v-btn-toggle>
+                            </v-col>
+                        </v-row>
+                    </v-card-actions>
+                </v-card>
             </v-col>
         </v-row>
     </v-container>
@@ -85,6 +100,12 @@ export default {
         },
 
         incrementItem(value) {
+            if (this.itemQuantity + value === 0) {
+                this.deleteItem(this.item.id);
+
+                return;
+            }
+
             this.$emit('save', {
                 id: this.item.id,
                 incrementBy: value

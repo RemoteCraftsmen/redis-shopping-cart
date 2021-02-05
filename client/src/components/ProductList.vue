@@ -1,5 +1,4 @@
 <template>
-    <v-container>
         <v-row v-if="products.length">
             <product
                 v-for="product in products"
@@ -11,7 +10,6 @@
         <v-row v-else>
             <p> No products in store </p>
         </v-row>
-    </v-container>
 </template>
 
 <script>

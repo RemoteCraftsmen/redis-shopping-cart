@@ -1,36 +1,47 @@
 <template>
-    <v-container class="pa-3" id="shopping-cart">
-        <v-row class="center">
-            <h2 class="mb-4">Shopping cart</h2>
-        </v-row>
-        <v-row>
-            <v-col v-if="items.length">
-                <h3 class="mb-4">Cart contents</h3>
-                <cart-list :items="items" />
-                <p class="text-right">
-                    Total: <b>${{ total }}</b>
-                </p>
-            </v-col>
-            <v-col v-else class="center">
-                <v-icon x-large>mdi-cart</v-icon>
-                <p> Cart is Empty. Please add items. </p>
-            </v-col>
-        </v-row>
-        <v-row v-if="items.length" class="mb-1">
-            <v-col>
-                <v-row>
-                    <v-col cols="6">
-                        <v-btn style="width: 100%" @click="emptyCart"
-                            >Empty cart</v-btn
-                        >
-                    </v-col>
-                    <v-col cols="6">
-                        <v-btn style="width: 100%">Checkout</v-btn>
-                    </v-col>
-                </v-row>
-            </v-col>
-        </v-row>
-    </v-container>
+    <v-card elevation="5" class="mr-md-4" dark>
+        <v-card-title class="pa-3">
+            <v-icon class="mr-2">mdi-cart</v-icon>
+            Shopping cart
+        </v-card-title>
+
+        <v-card-text v-if="items.length" class="pa-3">
+            <cart-list :items="items" />
+
+            <v-divider />
+
+            <div class="text-right text title" style="width: 100%">
+                Total: <span class="font-weight-black">${{ total }}</span>
+            </div>
+        </v-card-text>
+
+        <v-card-text v-else class="pa-3 text-center">
+            <v-icon x-large>mdi-cart</v-icon>
+            <p> Cart is Empty. Please add items. </p>
+        </v-card-text>
+
+        <v-card-actions class="pa-3">
+            <v-row align="center" justify="space-between">
+                <v-col cols="6">
+                    <v-btn
+                        outlined
+                        color="orange"
+                        style="width: 100%"
+                        @click="emptyCart"
+                    >
+                        Clear cart
+                        <v-icon> mdi-close-circle-outline </v-icon>
+                    </v-btn>
+                </v-col>
+                <v-col cols="6">
+                    <v-btn class="primary" style="width: 100%">
+                        Checkout
+                        <v-icon> mdi-check </v-icon>
+                    </v-btn>
+                </v-col>
+            </v-row>
+        </v-card-actions>
+    </v-card>
 </template>
 
 <script>
