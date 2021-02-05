@@ -1,5 +1,5 @@
 <template>
-    <v-btn v-if="cartItems.length" class="mx-auto error" @click="resetData">
+    <v-btn class="mx-auto error" @click="resetData">
         Reset data
         <v-icon right dark>mdi-restore</v-icon>
     </v-btn>
