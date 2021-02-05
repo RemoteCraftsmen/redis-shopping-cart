@@ -8,9 +8,9 @@
         <v-card-text v-if="items.length" class="pa-3">
             <cart-list :items="items" />
 
-            <v-divider />
+            <v-divider class="mt-6 mb-2" />
 
-            <div class="text-right text title" style="width: 100%">
+            <div class="text-right text title">
                 Total: <span class="font-weight-black">${{ total }}</span>
             </div>
         </v-card-text>
@@ -20,26 +20,19 @@
             <p> Cart is Empty. Please add items. </p>
         </v-card-text>
 
-        <v-card-actions class="pa-3">
-            <v-row align="center" justify="space-between">
-                <v-col cols="6">
-                    <v-btn
-                        outlined
-                        color="orange"
-                        style="width: 100%"
-                        @click="emptyCart"
-                    >
-                        Clear cart
-                        <v-icon> mdi-close-circle-outline </v-icon>
-                    </v-btn>
-                </v-col>
-                <v-col cols="6">
-                    <v-btn class="primary" style="width: 100%">
-                        Checkout
-                        <v-icon> mdi-check </v-icon>
-                    </v-btn>
-                </v-col>
-            </v-row>
+        <v-card-actions class="pa-3 justify-space-between">
+            <v-btn
+                outlined
+                color="orange"
+                @click="emptyCart"
+            >
+                <span class="d-xs-flex d-none d-xl-flex">Clear cart</span>
+                <v-icon right dark > mdi-close-circle-outline </v-icon>
+            </v-btn>
+            <v-btn class="primary">
+                Checkout
+                <v-icon right dark > mdi-check </v-icon>
+            </v-btn>
         </v-card-actions>
     </v-card>
 </template>

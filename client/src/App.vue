@@ -1,14 +1,15 @@
 <template>
     <v-app>
-        <v-container id="main-container">
-            <v-row>
-                <v-col cols="12">
-                    <div class="pa-3 d-flex align-center">
-                        <v-icon class="error app-icon"> mdi-cart-plus </v-icon>
-                        <h1>Shopping cart demo</h1>
-                    </div>
-                </v-col>
-            </v-row>
+        <v-container>
+            <div class="my-8 d-flex align-center">
+                <div class="pa-4 rounded-lg red darken-1">
+                    <v-icon color="white" size="45">mdi-cart-plus</v-icon>
+                </div>
+                <h1 class="ml-6 font-weight-regular">Shopping cart demo</h1>
+            </div>
+        </v-container>
+
+        <v-container>
             <v-row>
                 <v-col cols="12" sm="8">
                     <info />
@@ -21,7 +22,7 @@
             </v-row>
 
             <v-footer class="mt-12 pa-0">
-                ⓒ Copyright {{ new Date().getFullYear() }} | All Rights Reserved
+                © Copyright 2021 | All Rights Reserved to Redis Labs
             </v-footer>
         </v-container>
     </v-app>

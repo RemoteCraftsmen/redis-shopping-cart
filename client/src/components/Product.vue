@@ -1,16 +1,18 @@
 <template>
-    <v-col class="product" cols="12" sm="6" md="4">
-        <v-card elevation="2" style="height: 100% !important">
-            <v-img
-                class="img mw75"
-                :src="require(`@/assets/products/${product.id}.jpg`)"
-            />
+    <v-col cols="6" sm="6" md="6" lg="4">
+        <v-card class="h-full">
+            <div class="d-flex justify-center">
+                <v-img
+                        max-width="65%"
+                        :src="require(`@/assets/products/${product.id}.jpg`)"
+                />
+            </div>
 
-            <v-card-title class="pa-3 text-left text">
+            <v-card-title class="pa-3 text-subtitle-1 text-xl-h6">
                 {{ product.name }}
             </v-card-title>
 
-            <v-card-subtitle class="pa-3 text-left text">
+            <v-card-subtitle class="pa-3 text-subtitle-1 text-xl-h6">
                 ${{ product.price }}
             </v-card-subtitle>
 
@@ -18,40 +20,17 @@
 
             <v-divider />
 
-            <v-card-actions class="pa-3">
-                <v-row class="align-center">
-                    <v-col
-                        cols="4"
-                        md="12"
-                        lg="4"
-                        class="caption text-left text"
-                    >
-                        {{ product.stock ? `${product.stock} in` : 'out of' }}
-                        stock
-                    </v-col>
+            <v-card-actions class="pa-3 justify-space-between">
+                <span>{{ product.stock ? `${product.stock} in` : 'out of' }} stock</span>
 
-                    <v-col cols="8" md="12" lg="8">
-                        <v-btn
-                            class="body-2 success d-flex justify-space-around align-center"
-                            :disabled="product.stock === 0"
-                            style="
-                                height: 36px !important;
-                                width: 100%;
-                                padding: 0 !important;
-                            "
-                            @click="$emit('add', product.id)"
-                        >
-                            <div
-                                class="text-left text d-flex align-center"
-                                style="height: 36px"
-                            >
-                                Add to cart
-                            </div>
-
-                            <v-icon style="height: 36px">mdi-cart-plus</v-icon>
-                        </v-btn>
-                    </v-col>
-                </v-row>
+                <v-btn
+                    class="success"
+                    :disabled="product.stock === 0"
+                    @click="$emit('add', product.id)"
+                >
+                    <span class="d-xs-flex d-none d-xl-flex">Add to cart</span>
+                    <v-icon right dark>mdi-cart-plus</v-icon>
+                </v-btn>
             </v-card-actions>
         </v-card>
     </v-col>
@@ -69,7 +48,3 @@ export default {
     }
 };
 </script>
-
-<style lang="sass" scoped>
-@import '@/styles/images.scss'
-</style>
