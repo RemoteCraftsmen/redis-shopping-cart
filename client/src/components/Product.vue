@@ -14,16 +14,7 @@
                 ${{ product.price }}
             </v-card-subtitle>
 
-            <v-card-text class="pa-3 text-left text caption">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit
-                amet tempor diam. Etiam feugiat convallis feugiat. Cras vitae
-                sem turpis. Aenean ac odio massa. Cras pretium ultricies neque
-                in egestas. Nam fermentum et ligula sit amet accumsan. Proin non
-                nulla commodo, mollis ante eu, porta lacus. Morbi ut nibh luctus
-                leo tempus laoreet sit amet et nisi. Nulla semper imperdiet
-                consequat. Mauris rutrum orci diam, non suscipit mauris
-                consectetur vel.
-            </v-card-text>
+            <v-card-text class="pa-3 text-left text caption"> </v-card-text>
 
             <v-divider />
 
