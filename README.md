@@ -77,7 +77,7 @@ Copy `.env.example` to `.env` file
 
 # Install dependencies
 
-npm cache clean && npm install
+npm install
 
 # Serve locally
 
