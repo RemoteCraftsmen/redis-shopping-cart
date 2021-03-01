@@ -19,7 +19,8 @@ Copy `.env.example` to `.env` file and fill environmental variables
 
 # Run docker compose or install redis with RedisJson module manually. You can also go to https://redislabs.com/try-free/ and obtain necessary environmental variables
 
-docker network create global docker-compose up -d --build
+docker network create global
+docker-compose up -d --build
 
 # Install dependencies
 
