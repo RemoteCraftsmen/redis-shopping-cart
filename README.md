@@ -63,7 +63,7 @@ docker-compose up -d --build
 
 # Install dependencies
 
-npm cache clean && npm install
+npm install
 
 # Run dev server
 
